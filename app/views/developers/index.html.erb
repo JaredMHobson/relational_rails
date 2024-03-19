@@ -1,5 +1,7 @@
 <h1>These are all the developers</h1>
 
 <% @developers.each do |dev| %>
-  <h3><%= dev %></h3>
+  <h3><%= dev.name %></h3>
+  <p>Founded: <%= dev.year_founded %></p>
+  <p>Indie Studio: <%= dev.is_indie %></p>
 <% end %>

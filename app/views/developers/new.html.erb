@@ -4,5 +4,8 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Create a new dev</p>
   Name: <input type="text" name="name"><br/>
+  Year Founded: <input type="number" name="year_founded"><br/>
+  <input type="hidden" name="is_indie" value=false>
+  Indie Studio: <input type="checkbox" name="is_indie"><br/>
   <input type="submit">
   </form>
