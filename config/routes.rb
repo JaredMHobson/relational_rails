@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "/", to: "home#index"
+
+  get "/developers", to: "developers#index"
+  get "/developers/new", to: "developers#new"
+  post "/developers", to: "developers#create"
 end
