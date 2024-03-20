@@ -1,0 +1,11 @@
+<h1>This page is for creating new games</h1>
+
+<form action="/games" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Create a new game</p>
+  Name: <input type="text" name="name"><br/>
+  Year Released: <input type="number" name="year_released"><br/>
+  <input type="hidden" name="has_multiplayer" value=false>
+  Multiplayer: <input type="checkbox" name="has_multiplayer"><br/>
+  <input type="submit">
+  </form>

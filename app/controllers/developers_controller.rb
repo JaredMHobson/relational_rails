@@ -17,4 +17,8 @@ class DevelopersController < ApplicationController
 
     redirect_to '/developers'
   end
+
+  def show
+    @developer = Developer.find(params[:id])
+  end
 end

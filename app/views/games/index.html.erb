@@ -1,0 +1,8 @@
+<h1>These are all the games</h1>
+
+<% @games.each do |game| %>
+  <h3><%= game.name %></h3>
+  <p>Developer: <%= game.developer.name %></p>
+  <p>Released: <%= game.year_released %></p>
+  <p>Multiplayer: <%= game.has_multiplayer %></p>
+<% end %>

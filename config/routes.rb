@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   get "/", to: "home#index"
 
   get "/developers", to: "developers#index"
+  get "/developers/:id", to: "developers#show"
   get "/developers/new", to: "developers#new"
   post "/developers", to: "developers#create"
+
+  get "/games", to: "games#index"
+  get "/games/:id", to: "games#show"
+  get "/games/new", to: "games#new"
+  post "/games", to: "games#create"
 end
