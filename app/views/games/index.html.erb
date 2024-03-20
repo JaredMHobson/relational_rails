@@ -1,8 +1,16 @@
-<h1>These are all the games</h1>
+<h1>Game Index</h1>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/developers">Developer Index</a></li>
+<li><a href="/games">Game Index</a></li>
+</ul>
+</nav>
 
 <% @games.each do |game| %>
-  <h3><%= game.name %></h3>
-  <p>Developer ID: <%= game.developer_id %></p>
+  <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>
+  <p>Developer: <%= game.dev_name %></p>
   <p>Released: <%= game.year_released %></p>
   <p>Multiplayer: <%= game.has_multiplayer %></p>
 <% end %>

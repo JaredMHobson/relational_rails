@@ -1,7 +1,15 @@
-<h1>These are all the developers</h1>
+<h1>Developer Index</h1>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/developers">Developer Index</a></li>
+<li><a href="/games">Game Index</a></li>
+</ul>
+</nav>
 
 <% @developers.each do |dev| %>
-  <h3><%= dev.name %></h3>
+  <h3><a href="/developers/<%= dev.id %>"><%= dev.name %></a></h3>
   <p>Founded: <%= dev.year_founded %></p>
   <p>Indie Studio: <%= dev.is_indie %></p>
 <% end %>

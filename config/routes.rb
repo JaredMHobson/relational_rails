@@ -11,12 +11,12 @@ Rails.application.routes.draw do
   get "/", to: "home#index"
 
   get "/developers", to: "developers#index"
-  get "/developers/:id", to: "developers#show"
   get "/developers/new", to: "developers#new"
+  get "/developers/:id", to: "developers#show"
   post "/developers", to: "developers#create"
 
   get "/games", to: "games#index"
-  get "/games/:id", to: "games#show"
   get "/games/new", to: "games#new"
+  get "/games/:id", to: "games#show"
   post "/games", to: "games#create"
 end
