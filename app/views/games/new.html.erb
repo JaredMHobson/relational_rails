@@ -15,5 +15,10 @@
   Year Released: <input type="number" name="year_released"><br/>
   <input type="hidden" name="has_multiplayer" value=false>
   Multiplayer: <input type="checkbox" name="has_multiplayer"><br/>
+  Developer: <select name="developer_id">
+    <% @developers.each do |dev| %>
+      <option value="<%= dev.id %>"><%= dev.name %></option>
+    <% end %>
+  </select><br/>
   <input type="submit">
-  </form>
+</form>
