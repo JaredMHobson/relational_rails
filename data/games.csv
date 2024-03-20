@@ -1,0 +1,111 @@
+name,developer_id,year_released,has_multiplayer
+Super Mario Bros.,210,1985,true
+The Legend of Zelda: Ocarina of Time,210,1998,false
+Wii Sports,210,2006,true
+Half-Life 2,211,2004,false
+Team Fortress 2,211,2007,true
+Dota 2,211,2013,true
+Counter-Strike: Global Offensive (CS:GO),211,2012,true
+Grand Theft Auto V,212,2013,true
+Red Dead Redemption 2,212,2018,true
+L.A. Noire,212,2011,false
+FIFA,213,1993,true
+The Sims,213,2000,false
+Battlefield,213,2002,true
+Call of Duty,214,2003,true
+Crash Bandicoot,214,1996,false
+Diablo,214,1996,true
+God of War,215,2005,false
+Uncharted 4: A Thief's End,215,2016,true
+Horizon Zero Dawn,215,2017,false
+Assassin's Creed,216,2007,true
+Far Cry 3,216,2012,true
+Watch Dogs,216,2014,true
+Final Fantasy VII,217,1997,false
+Kingdom Hearts,217,2002,false
+Tomb Raider,217,1996,false
+PUBG Mobile,218,2018,true
+Honor of Kings,218,2015,true
+Call of Duty: Mobile,218,2019,true
+Fortnite,219,2017,true
+Gears of War,219,2006,true
+Infinity Blade,219,2010,false
+Resident Evil 4,220,2005,false
+Resident Evil 2,220,1998,false
+Street Fighter II,220,1991,true
+Tales of Vesperia: Definitive Edition,221,2019,false
+Naruto Shippuden: Ultimate Ninja Storm 4,221,2016,true
+Dragon Ball Z: Kakarot,221,2020,false
+Metal Gear Solid,222,1998,false
+Silent Hill 2,222,2001,false
+Castlevania: Symphony of the Night,222,1997,false
+Sonic the Hedgehog,223,1991,false
+Streets of Rage 2,223,1992,true
+Phantasy Star Online,223,2000,true
+The Elder Scrolls V: Skyrim,224,2011,false
+Fallout: New Vegas,224,2010,false
+Doom,224,2016,true
+Bioshock,225,2007,false
+Civilization VI,225,2016,true
+Borderlands 2,225,2012,true
+Dark Souls,226,2011,true
+Bloodborne,226,2015,false
+Halo: Combat Evolved,227,2001,true
+Destiny,227,2014,true
+Destiny 2,227,2017,true
+Diablo,228,1996,false
+Warcraft II: Tides Of Darkness,228,1995,true
+Warcraft III: Reign Of Chaos,228,2002,true
+Cyberpunk 2077,229,2020,false
+Gwent: The Witcher Card Game,229,2018,true
+The Witcher 3: Wild Hunt,229,2015,false
+League of Legends,230,2009,true
+VALORANT,230,2020,true
+Teamfight Tactics,230,2019,true
+Mass Effect,231,2007,false
+Star Wars: Knights of the Old Republic,231,2003,false
+Dragon Age: Origins,231,2009,true
+The Last of Us,232,2013,false
+Uncharted 2: Among Thieves,232,2009,true
+Borderlands 2,233,2012,true
+Brothers in Arms: Road to Hill 30,233,2005,true
+Marvel's Spider-Man,234,2018,false
+Death Stranding,235,2019,false
+Final Fantasy VII,236,1997,false
+Tomb Raider: Legend,237,2006,false
+Tomb Raider: Underworld,237,2008,false
+Apex Legends,238,2019,true
+Star Wars Jedi: Fallen Order,238,2019,false
+Titanfall 2,238,2016,true
+Bayonetta,239,2009,false
+MadWorld,239,2009,false
+Nier: Automata,239,2017,false
+Middle-Earth: Shadow of Mordor,240,2014,true
+F.E.A.R.,240,2005,true
+Condemned: Criminal Origins,240,2005,false
+Dirt Rally,241,2015,true
+Grid 2,241,2013,true
+Operation Flashpoint: Red Hammer,241,2002,true
+Alan Wake,242,2010,false
+Max Payne,242,2001,false
+Control,242,2019,false
+Hitman 2: Silent Assassin,243,2002,false
+Hitman: Blood Money,243,2006,false
+Forza Motorsport,244,2005,true
+Mafia III,245,2016,false
+Horizon Zero Dawn,246,2017,false
+Divinity: Original Sin 2,247,2017,true
+Baldur's Gate 3,247,2023,true
+Guilty Gear,248,1998,true
+Psychonauts,249,2005,false
+Yooka-Laylee,250,2017,false
+Ori and the Blind Forest,251,2015,false
+Hades,252,2020,true
+Inside,253,2016,false
+No Man's Sky,254,2016,true
+Spiritfarer,255,2020,false
+What Remains of Edith Finch,256,2017,false
+Journey,257,2012,true
+The Banner Saga,258,2014,false
+Outer Wilds,259,2019,false
+Among Us,260,2018,true

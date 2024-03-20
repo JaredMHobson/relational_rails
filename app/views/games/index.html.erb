@@ -2,7 +2,7 @@
 
 <% @games.each do |game| %>
   <h3><%= game.name %></h3>
-  <p>Developer: <%= game.developer.name %></p>
+  <p>Developer ID: <%= game.developer_id %></p>
   <p>Released: <%= game.year_released %></p>
   <p>Multiplayer: <%= game.has_multiplayer %></p>
 <% end %>

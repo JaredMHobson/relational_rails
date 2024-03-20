@@ -9,6 +9,13 @@ require 'CSV'
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-CSV.foreach('./data/developers.csv', headers: true, header_converters: :symbol) do |row|
-  Developer.create(row)
-end
+# Game.destroy_all
+# Developer.destroy_all
+
+# CSV.foreach('./data/developers.csv', headers: true, header_converters: :symbol) do |row|
+#   Developer.create(row)
+# end
+
+# CSV.foreach('./data/games.csv', headers: true, header_converters: :symbol) do |row|
+#   Game.create(row)
+# end
