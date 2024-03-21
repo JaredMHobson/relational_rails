@@ -10,19 +10,20 @@ Rails.application.routes.draw do
 
   get "/", to: "home#index"
 
-  resources :developers do
-    resources :games, shallow: true
-  end
+  # resources :developers do
+  #   resources :games, shallow: true
+  # end
+  # resources :games
 
-  resources :games
-  # get "/developers", to: "developers#index"
-  # get "/developers/new", to: "developers#new"
-  # get "/developers/:id", to: "developers#show"
-  # post "/developers", to: "developers#create"
-  # get "/developers/:id/games", to: "games#index"
+  get "/developers", to: "developers#index"
+  get "/developers/new", to: "developers#new"
+  get "/developers/:id", to: "developers#show"
+  post "/developers", to: "developers#create"
+  # get "/developers/:developer_id/games", to: "games#index"
+  get "/developers/:developer_id/games", to: "developer_games#index"
 
-  # get "/games", to: "games#index"
-  # get "/games/new", to: "games#new"
-  # get "/games/:id", to: "games#show"
-  # post "/games", to: "games#create"
+  get "/games", to: "games#index"
+  get "/games/new", to: "games#new"
+  get "/games/:game_id", to: "games#show"
+  post "/games", to: "games#create"
 end

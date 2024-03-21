@@ -1,10 +1,10 @@
 class GamesController < ApplicationController
   def index
-    if params[:developer_id]
-      @games = Developer.find(params[:developer_id]).games
-    else
+    # if params[:developer_id]
+    #   @games = Developer.find(params[:developer_id]).games
+    # else
       @games = Game.all
-    end
+    # end
   end
 
   def new
@@ -26,6 +26,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
   end
 end

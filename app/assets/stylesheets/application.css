@@ -14,9 +14,10 @@
  *= require_self
  */
 
- nav {
+nav {
   width: fit-content;
 }
+
 nav ul {
   list-style-type: none;
   margin: 0;
