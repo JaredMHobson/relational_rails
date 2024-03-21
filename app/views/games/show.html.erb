@@ -8,6 +8,6 @@
 </ul>
 </nav>
 
-<p>Developer: <%= @game.dev_name %></p>
+<p>Developer: <a href="/developers/<%= @game.developer_id %>"><%= @game.dev_name %></a></p>
 <p>Year Released: <%= @game.year_released %></p>
 <p>Multiplayer: <%= @game.has_multiplayer %></p>
