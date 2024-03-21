@@ -26,5 +26,6 @@ require 'CSV'
 @valorant = @riot.games.create!(name: "VALORANT", has_multiplayer: true, year_released: 2020)
 @league = @riot.games.create!(name: "League of Legends", has_multiplayer: true, year_released: 2009)
 @tft = @riot.games.create!(name: "Teamfight Tactics", has_multiplayer: true, year_released: 2019)
+@lethal = @zeek.games.create!(name: "Lethal Company", has_multiplayer: true, year_released: 2023)
 @control = @remedy.games.create!(name: "Control", has_multiplayer: false, year_released: 2019)
 @max = @remedy.games.create!(name: "Max Payne", has_multiplayer: false, year_released: 2001)
