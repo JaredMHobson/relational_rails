@@ -12,10 +12,49 @@ RSpec.describe 'the games show page' do
   it 'displays the name of the game' do
     visit "/games/#{@valorant.id}"
 
-    expect(page).to have_content(@valorant.name)
+    expect(page).to have_content("#{@valorant.name}")
 
     visit "/games/#{@control.id}"
 
-    expect(page).to have_content(@control.name)
+    expect(page).to have_content("#{@control.name}")
+  end
+
+  it 'displays if the game has multiplayer' do
+    visit "/games/#{@valorant.id}"
+
+    expect(page).to have_content("Multiplayer: #{@valorant.has_multiplayer}")
+
+    visit "/games/#{@control.id}"
+
+    expect(page).to have_content("Multiplayer: #{@control.has_multiplayer}")
+  end
+
+  it 'displays the year the game was released' do
+    visit "/games/#{@valorant.id}"
+
+    expect(page).to have_content("Year Released: #{@valorant.year_released}")
+
+    visit "/games/#{@control.id}"
+
+    expect(page).to have_content("Year Released: #{@control.year_released}")
+  end
+
+  it 'displays the name of the games developer' do
+    visit "/games/#{@valorant.id}"
+
+    expect(page).to have_content("Developer: #{@valorant.dev_name}")
+
+    visit "/games/#{@control.id}"
+
+    expect(page).to have_content("Developer: #{@control.dev_name}")
+  end
+
+  it 'does not display other games info' do
+    visit "/games/#{@valorant.id}"
+
+    expect(page).to_not have_content("#{@control.name}")
+    expect(page).to_not have_content("Multiplayer: #{@control.has_multiplayer}")
+    expect(page).to_not have_content("Year Released: #{@control.year_released}")
+    expect(page).to_not have_content("Developer: #{@control.dev_name}")
   end
 end
