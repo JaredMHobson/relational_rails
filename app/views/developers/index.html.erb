@@ -8,6 +8,8 @@
 </ul>
 </nav>
 
+<a href="/developers/new">Create new developer</a>
+
 <% @developers.each do |dev| %>
   <h3><a href="/developers/<%= dev.id %>"><%= dev.name %></a></h3>
   <p>Founded: <%= dev.year_founded %></p>
