@@ -53,4 +53,12 @@ RSpec.describe 'the developers show page' do
       expect(page).to have_content("Total Games: #{@developer2.game_count}")
     end
   end
+
+  describe 'User Story 10' do
+    it 'displays a link to a list of its own games at /developers/:id/games' do
+      visit "/developers/#{@developer1.id}"
+
+      expect(page).to have_link(href: "/developers/#{@developer1.id}/games")
+    end
+  end
 end
