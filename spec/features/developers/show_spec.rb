@@ -6,14 +6,36 @@ RSpec.describe 'the developers show page' do
     @developer2 = Developer.create!(name: "Valve Corporation", is_indie: false, year_founded: 1996)
   end
 
-  it 'displays the name of the developer' do
-    visit "/developers/#{@developer1.id}"
+  describe 'User Story 2' do
+    it 'displays the name of the developer' do
+      visit "/developers/#{@developer1.id}"
 
-    expect(page).to have_content(@developer1.name)
+      expect(page).to have_content(@developer1.name)
 
-    visit "/developers/#{@developer2.id}"
+      visit "/developers/#{@developer2.id}"
 
-    expect(page).to have_content(@developer2.name)
+      expect(page).to have_content(@developer2.name)
+    end
+
+    it 'displays if the developer is indie' do
+      visit "/developers/#{@developer1.id}"
+
+      expect(page).to have_content("Indie: #{@developer1.is_indie}")
+
+      visit "/developers/#{@developer2.id}"
+
+      expect(page).to have_content("Indie: #{@developer2.is_indie}")
+    end
+
+    it 'displays the year it was founded' do
+      visit "/developers/#{@developer1.id}"
+
+      expect(page).to have_content("Year Founded: #{@developer1.year_founded}")
+
+      visit "/developers/#{@developer2.id}"
+
+      expect(page).to have_content("Year Founded: #{@developer2.year_founded}")
+    end
   end
 
   describe 'User Story 7' do
