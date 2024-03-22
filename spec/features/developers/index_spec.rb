@@ -33,5 +33,13 @@ RSpec.describe 'the developers index page' do
 
       expect(page).to have_link(href: "/developers/new")
     end
+
+    it 'takes you to page developers/new when you click on the link' do
+      visit "/developers"
+
+      click_link(href: "/developers/new")
+
+      expect(page).to have_current_path("/developers/new")
+    end
   end
 end
