@@ -26,4 +26,12 @@ RSpec.describe 'the developers index page' do
       expect(@developer2.name).to appear_before(@developer1.name)
     end
   end
+
+  describe 'User Story 11' do
+    it 'has a link to create a new developer record' do
+      visit "/developers"
+
+      expect(page).to have_link(href: "/developers/new")
+    end
+  end
 end
