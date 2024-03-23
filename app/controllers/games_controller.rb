@@ -1,10 +1,6 @@
 class GamesController < ApplicationController
   def index
-    # if params[:developer_id]
-    #   @games = Developer.find(params[:developer_id]).games
-    # else
-      @games = Game.all
-    # end
+    @games = Game.all
   end
 
   def new
@@ -12,20 +8,16 @@ class GamesController < ApplicationController
   end
 
   def create
-    game = Game.new({
-      name: params[:name],
-      has_multiplayer: params[:has_multiplayer],
-      year_released: params[:year_released],
-      developer_id: params[:developer_id]
-    })
-    # Drop down menu with a list of devs to relate it to? 
-
-    game.save
-
+    game = Game.create!(game_params)
     redirect_to '/games'
   end
 
   def show
     @game = Game.find(params[:game_id])
+  end
+
+private
+  def game_params
+    params.permit(:name, :has_multiplayer, :year_released, :developer_id)
   end
 end
