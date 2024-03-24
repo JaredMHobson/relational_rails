@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get "/games", to: "games#index"
   get "/games/new", to: "games#new"
+  get '/games/:game_id/edit', to: 'games#edit'
+  patch '/games/:game_id', to: 'games#update'
   get "/games/:game_id", to: "games#show"
   post "/games", to: "games#create"
 end

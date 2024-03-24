@@ -1,0 +1,11 @@
+<%= form_with url: "/games/#{@game.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name, 'Name:' %>
+  <%= form.text_field :name, value: @game.name %><br/>
+  <%= form.label :year_released, 'Year Released:' %>
+  <%= form.number_field :year_released, value: @game.year_released %><br/>
+  <%= form.label :has_multiplayer, 'Multiplayer:' %>
+  <%= form.check_box :has_multiplayer, checked: @game.has_multiplayer %><br/>
+  <%= form.label :developer_id, 'Developer:' %>
+  <%= form.collection_select( :developer_id, @developers, :id, :name, selected: @game.developer_id ) %><br/>
+  <%= form.submit "Update #{@game.name}" %>
+<% end %>
