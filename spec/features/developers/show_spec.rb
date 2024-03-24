@@ -77,4 +77,36 @@ RSpec.describe 'the developers show page' do
       expect(current_path).to eq("/developers/#{@developer1.id}/edit")
     end
   end
+
+  describe 'User Story 19' do
+    it 'has a link that redirects you to the index page' do
+      visit "/developers/#{@developer1.id}"
+      
+      click_link('Delete')
+
+      expect(current_path).to eq('/developers')
+    end
+
+    it 'has a link that deletes the developer' do
+      visit "/developers/#{@developer1.id}"
+      
+      click_link('Delete')
+
+      expect(page).to_not have_content('Nintendo')
+    end
+
+    it 'has a link that deletes the developers games' do
+      @developer1.create!(name: 'Mario', year_released: 1985, has_multiplayer: true)
+      @developer1.create!(name: 'Zelda', year_released: 2000, has_multiplayer: true)
+
+      visit "/developers/#{@developer1.id}"
+      
+      click_link('Delete')
+
+      visit '/games'
+
+      expect(page).to_not have_content('Mario')
+      expect(page).to_not have_content('Zelda')
+    end
+  end
 end
