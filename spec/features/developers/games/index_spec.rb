@@ -78,4 +78,15 @@ RSpec.describe 'the developers games page' do
       expect(@league.name).to appear_before(@valorant.name)
     end
   end
+
+  describe 'User Story 21' do
+    it 'has a form on it that only returns games that belong to the developer that were released after a certain year' do
+      visit "/developers/#{@riot.id}/games"
+
+      fill_in(:games_after_year, with: '2010')
+      click_button('Submit')
+
+      expect(page).to_not have_content('League of Legends')
+    end
+  end
 end
