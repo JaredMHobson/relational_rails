@@ -56,4 +56,13 @@ RSpec.describe 'the games index page' do
       expect(page).to have_content("Developer: Remedy Entertainment")
     end
   end
+
+  describe 'User Story 15' do
+    it 'only shows games that have multiplayer' do
+      visit '/games'
+
+      expect(page).to have_content('Multiplayer: true')
+      expect(page).to_not have_content('Multiplayer: false')
+    end
+  end
 end
