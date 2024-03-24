@@ -2,7 +2,14 @@
 
 <%= link_to 'Add Game', "/developers/#{@developer.id}/games/new" %>
 
-<%= link_to 'Sort Alphabetically',"/developers/#{@developer.id}/games?sort=alphabetically" %>
+<%= link_to 'Sort Alphabetically',"/developers/#{@developer.id}/games?sort=alphabetically" %><br/>
+
+<%= form_with url: "/developers/#{@developer.id}/games", method: :get do |form| %>
+  <%= form.label :games_after_year, 'Only Show Games Released After Year:' %>
+  <%= form.number_field :games_after_year %>
+  <%= form.submit 'Submit' %>
+<% end %>
+
 
 <% @games.each do |game| %>
   <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>

@@ -1,11 +1,30 @@
 class DeveloperGamesController < ApplicationController
   def index
     @developer = Developer.find(params[:developer_id])
+    @games = @developer.games
+    
+    if params[:games_after_year]
+      @games = @developer.games.where("year_released >= #{params[:games_after_year]}")
+    end
+    
     if params[:sort] == 'alphabetically'
       @games = @developer.games.order(:name)
-    else
-      @games = @developer.games
     end
+    
+    # case
+    # when params[:sort] == 'alphabetically'
+    #   @games = @developer.games.order(:name)
+    # when params[:games_after_year]
+    #   @games = @developer.games.where("year_released >= #{params[:games_after_year]}")
+    # else
+    #   @games = @developer.games
+    # end
+
+    # if params[:sort] == 'alphabetically'
+    #   @games = @developer.games.order(:name)
+    # else
+    #   @games = @developer.games
+    # end
   end
 
   def new
