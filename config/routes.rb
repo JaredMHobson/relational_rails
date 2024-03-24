@@ -15,9 +15,11 @@ Rails.application.routes.draw do
   get '/developers/:id/edit', to: 'developers#edit'
   get "/developers/:id", to: "developers#show"
   post "/developers", to: "developers#create"
+  patch "/developers/:id", to: "developers#update"
+
   get "/developers/:developer_id/games", to: "developer_games#index"
   get "/developers/:developer_id/games/new", to: "developer_games#new"
-  patch "/developers/:id", to: "developers#update"
+  post "/developers/:developer_id/games", to: "developer_games#create"
 
   get "/games", to: "games#index"
   get "/games/new", to: "games#new"

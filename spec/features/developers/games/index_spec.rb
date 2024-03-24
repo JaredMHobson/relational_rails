@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the games show page' do
+RSpec.describe 'the developers games page' do
   before :each do
     @riot = Developer.create!(name: "Riot Games", is_indie: false, year_founded: 2006)
     @valorant = @riot.games.create!(name: "VALORANT", has_multiplayer: true, year_released: 2020)
