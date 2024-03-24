@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   get "/developers/new", to: "developers#new"
   get '/developers/:id/edit', to: 'developers#edit'
   get "/developers/:id", to: "developers#show"
-  delete "/developers/:id", to: "developers#destroy"
   post "/developers", to: "developers#create"
   patch "/developers/:id", to: "developers#update"
+  delete "/developers/:id", to: "developers#destroy"
 
   get "/developers/:developer_id/games", to: "developer_games#index"
   get "/developers/:developer_id/games/new", to: "developer_games#new"
@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   patch '/games/:game_id', to: 'games#update'
   get "/games/:game_id", to: "games#show"
   post "/games", to: "games#create"
+  delete "/games/:id", to: "games#destroy"
 end

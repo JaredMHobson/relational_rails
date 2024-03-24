@@ -29,6 +29,13 @@ class GamesController < ApplicationController
     redirect_to "/games/#{game.id}"
   end
 
+  def destroy
+    game = Game.find(params[:id])
+    game.delete
+
+    redirect_to '/games'
+  end
+
 private
   def game_params
     params.permit(:name, :has_multiplayer, :year_released, :developer_id)

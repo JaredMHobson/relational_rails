@@ -1,6 +1,7 @@
 <h1><%= @game.name %></h1>
 
 <%= link_to "Update #{@game.name}", "/games/#{@game.id}/edit" %>
+<%= button_to 'Delete', "/games/#{@game.id}", method: :delete %>
 
 <p>Developer: <a href="/developers/<%= @game.developer_id %>"><%= @game.dev_name %></a></p>
 <p>Year Released: <%= @game.year_released %></p>
