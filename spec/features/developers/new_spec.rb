@@ -36,5 +36,15 @@ RSpec.describe 'the developers new page' do
 
       expect(current_path).to eq('/developers')
     end
+
+    it 'shows the new developer on the index page when created' do
+      visit '/developers/new'
+
+      fill_in(:name, with: 'Jagex')
+      fill_in(:year_founded, with: 1990)
+      click_button('Create Developer')
+
+      expect(page).to have_content('Jagex')
+    end
   end
 end
