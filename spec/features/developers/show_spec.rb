@@ -61,4 +61,20 @@ RSpec.describe 'the developers show page' do
       expect(page).to have_link(href: "/developers/#{@developer1.id}/games")
     end
   end
+
+  describe 'User Story 12' do
+    it 'has a link to the edit page when I visit a developers show page' do
+      visit "/developers/#{@developer1.id}"
+
+      expect(page).to have_link("Edit #{@developer1.name}")
+    end
+
+    it 'takes me to the developer edit page when I click the edit link' do
+      visit "/developers/#{@developer1.id}"
+
+      click_link("Edit #{@developer1.name}")
+
+      expect(current_path).to eq("/developers/#{@developer1.id}/edit")
+    end
+  end
 end
