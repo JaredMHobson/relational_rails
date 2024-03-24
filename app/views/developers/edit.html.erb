@@ -4,6 +4,6 @@
   <%= form.label :year_founded, 'Year Founded:' %>
   <%= form.number_field :year_founded, value: @developer.year_founded %><br/>
   <%= form.label :is_indie, "Indie Studio:" %>
-  <%= form.check_box :is_indie, { class: 'my-checkbox' }, checked: true %>
+  <%= form.check_box :is_indie, checked: @developer.is_indie %>
   <%= form.submit "Update #{@developer.name}" %>
 <% end %>

@@ -24,7 +24,7 @@ RSpec.describe 'the developers edit page' do
       expect(current_path).to eq("/developers/#{@developer1.id}")
     end
 
-    it 'updates the developer with the new info' do
+    it 'updates the developer show page with the new info' do
       visit "/developers/#{@developer2.id}/edit"
 
       fill_in(:name, with: 'GameFreak')
