@@ -57,4 +57,20 @@ RSpec.describe 'the games show page' do
     expect(page).to_not have_content("Year Released: #{@control.year_released}")
     expect(page).to_not have_content("Developer: #{@control.dev_name}")
   end
+
+  describe 'User Story 14' do
+    it 'has a link to the edit page when I visit a games show page' do
+      visit "/games/#{@control.id}"
+
+      expect(page).to have_link("Update #{@control.name}")
+    end
+
+    it 'takes me to the game edit page when I click the update link' do
+      visit "/games/#{@control.id}"
+
+      click_link("Update #{@control.name}")
+
+      expect(current_path).to eq("/games/#{@control.id}/edit")
+    end
+  end
 end
