@@ -4,6 +4,7 @@
 
 <% @developers.each do |dev| %>
   <h3><a href="/developers/<%= dev.id %>"><%= dev.name %></a></h3>
+  <%= link_to "Edit #{dev.name}", "/developers/#{dev.id}/edit" %>
   <p>Founded: <%= dev.year_founded %></p>
   <p>Indie Studio: <%= dev.is_indie %></p>
   <p>Created: <%= dev.created_at %></p>
