@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "/", to: "home#index"
-
+  
   get "/developers", to: "developers#index"
   get "/developers/new", to: "developers#new"
   get '/developers/:id/edit', to: 'developers#edit'
   get "/developers/:id", to: "developers#show"
+  delete "/developers/:id", to: "developers#destroy"
   post "/developers", to: "developers#create"
   patch "/developers/:id", to: "developers#update"
 
