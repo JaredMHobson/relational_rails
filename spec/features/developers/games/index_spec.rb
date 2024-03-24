@@ -62,7 +62,7 @@ RSpec.describe 'the games show page' do
       visit "/developers/#{@riot.id}/games"
 
       click_link 'Add Game'
-save_and_open_page
+
       expect(current_path).to eq("/developers/#{@riot.id}/games/new")
     end
   end
