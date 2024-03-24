@@ -1,13 +1,5 @@
 <h1>Game Index</h1>
 
-<nav>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/developers">Developer Index</a></li>
-<li><a href="/games">Game Index</a></li>
-</ul>
-</nav>
-
 <% @games.each do |game| %>
 <div id="game_<%= game.id%>_info">
   <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>

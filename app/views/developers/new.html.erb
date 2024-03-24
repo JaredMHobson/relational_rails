@@ -1,13 +1,5 @@
 <h1>This page is for creating new devs</h1>
 
-<nav>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/developers">Developer Index</a></li>
-<li><a href="/games">Game Index</a></li>
-</ul>
-</nav>
-
 <%= form_with url: '/developers', method: :post, local: true do |form| %>
   <%= form.label :name, 'Name:' %>
   <%= form.text_field :name %><br/>
