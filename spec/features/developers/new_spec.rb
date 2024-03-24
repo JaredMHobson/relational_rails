@@ -13,5 +13,28 @@ RSpec.describe 'the developers new page' do
 
       expect(page).to have_selector("form")
     end
+
+    it 'can create a new developer' do
+      visit '/developers/new'
+
+      fill_in(:name, with: 'ArenaNet')
+      fill_in(:year_founded, with: 2001)
+      check(:is_indie)
+      click_button('Create Developer')
+
+      new_developer_name = Developer.last.name
+
+      expect(new_developer_name).to eq('ArenaNet')
+    end
+
+    it 'redirects me to Developers index when I click the create developers button' do
+      visit '/developers/new'
+
+      fill_in(:name, with: 'Psyonix')
+      fill_in(:year_founded, with: 2000)
+      click_button('Create Developer')
+
+      expect(current_path).to eq('/developers')
+    end
   end
 end
