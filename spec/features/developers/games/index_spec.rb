@@ -66,4 +66,16 @@ RSpec.describe 'the developers games page' do
       expect(current_path).to eq("/developers/#{@riot.id}/games/new")
     end
   end
+
+  describe 'User Story 16' do
+    it 'has a link that sorts its games alphabetically' do
+      visit "/developers/#{@riot.id}/games"
+
+      expect(@valorant.name).to appear_before(@league.name)
+
+      click_link 'Sort Alphabetically'
+
+      expect(@league.name).to appear_before(@valorant.name)
+    end
+  end
 end
