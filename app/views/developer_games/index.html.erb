@@ -1,5 +1,7 @@
 <h1><%= @developer.name %> Games</h1>
 
+<%= link_to 'Add Game', "/developers/#{@developer.id}/games/new" %>
+
 <% @games.each do |game| %>
   <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>
   <p>Year Released: <%= game.year_released %></p>

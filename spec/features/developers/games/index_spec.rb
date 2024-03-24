@@ -50,4 +50,20 @@ RSpec.describe 'the games show page' do
     expect(page).to_not have_content("Year Released: #{@control.year_released}")
     expect(page).to_not have_content("Developer: #{@control.dev_name}")
   end
+
+  describe 'User Story 13' do
+    it 'has a link to add a game to its games' do
+      visit "/developers/#{@riot.id}/games"
+
+      expect(page).to have_link("Add Game")
+    end
+
+    it 'takes you to /developers/#{@riot.id}/games/new when you click the Add Game link' do
+      visit "/developers/#{@riot.id}/games"
+
+      click_link 'Add Game'
+save_and_open_page
+      expect(current_path).to eq("/developers/#{@riot.id}/games/new")
+    end
+  end
 end

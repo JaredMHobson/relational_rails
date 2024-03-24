@@ -3,4 +3,7 @@ class DeveloperGamesController < ApplicationController
     @developer = Developer.find(params[:developer_id])
     @games = @developer.games
   end
+
+  def new
+  end
 end
