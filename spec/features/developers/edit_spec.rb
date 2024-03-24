@@ -7,18 +7,32 @@ RSpec.describe 'the developers edit page' do
   end
 
   describe 'User Story 12' do
-    it 'has a link to the edit page when I visit a developers show page' do
-      visit "/developers/#{@developer1.id}"
+    it 'has a form when I visit a developers edit page' do
+      visit "/developers/#{@developer1.id}/edit"
 
-      expect(page).to have_link("/developers/#{@developer1}/edit")
+      expect(page).to have_selector('form')
     end
 
-    it 'takes me to the developer edit page when I click the edit link' do
-      visit "/developers/#{@developer1.id}"
+    it 'takes me to the developers show page when I click the Update Developer button' do
+      visit "/developers/#{@developer1.id}/edit"
 
-      click_link("Edit #{@developer1.name}")
+      fill_in(:name, with: 'Sony')
+      fill_in(:year_founded, with: 1876)
+      check(:is_indie)
+      click_button("Update #{@developer1.name}")
 
-      expect(current_path).to eq("/developers/#{@developer1.id}/edit")
+      expect(current_path).to eq("/developers/#{@developer1.id}")
+    end
+
+    it 'updates the developer with the new info' do
+      visit "/developers/#{@developer2.id}/edit"
+
+      fill_in(:name, with: 'GameFreak')
+      fill_in(:year_founded, with: 1900)
+      click_button("Update #{@developer2.name}")
+
+      expect(page).to have_content("GameFreak")
+      expect(page).to have_content("Year Founded: 1900")
     end
   end
 end
