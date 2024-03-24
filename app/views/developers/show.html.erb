@@ -2,7 +2,6 @@
 
 <%= link_to "Update #{@developer.name}", "/developers/#{@developer.id}/edit" %>
 <%= button_to "Delete", "/developers/#{@developer.id}", method: :delete %>
-<%= link_to "Delete", "/developers/#{@developer.id}", method: :delete %>
 
 <p>Year Founded: <%= @developer.year_founded %></p>
 <p>Indie: <%= @developer.is_indie %></p>
