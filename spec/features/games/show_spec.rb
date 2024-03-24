@@ -73,4 +73,22 @@ RSpec.describe 'the games show page' do
       expect(current_path).to eq("/games/#{@control.id}/edit")
     end
   end
+
+  describe 'User Story 20' do
+    it 'has a delete button that redirects you to the games index page' do
+      visit "/games/#{@valorant.id}"
+      
+      click_button('Delete')
+
+      expect(current_path).to eq('/games')
+    end
+
+    it 'has a delete button that deletes the game' do
+      visit "/games/#{@valorant.id}"
+      
+      click_button('Delete')
+
+      expect(page).to_not have_content('Valorant')
+    end
+  end
 end
