@@ -65,4 +65,20 @@ RSpec.describe 'the games index page' do
       expect(page).to_not have_content('Multiplayer: false')
     end
   end
+
+  describe 'User Story 18' do
+    it 'has an edit link next to each game that takes me to the games edit page' do
+      visit "/games"
+
+      click_link("Edit #{@valorant.name}")
+
+      expect(current_path).to eq("/games/#{@valorant.id}/edit")
+
+      visit "/games"
+
+      click_link("Edit #{@league.name}")
+
+      expect(current_path).to eq("/games/#{@league.id}/edit")
+    end
+  end
 end
