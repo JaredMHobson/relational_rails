@@ -17,10 +17,12 @@ Rails.application.routes.draw do
 
   get "/developers", to: "developers#index"
   get "/developers/new", to: "developers#new"
+  get '/developers/:id/edit', to: 'developers#edit'
   get "/developers/:id", to: "developers#show"
   post "/developers", to: "developers#create"
   # get "/developers/:developer_id/games", to: "games#index"
   get "/developers/:developer_id/games", to: "developer_games#index"
+  patch "/developers/:id", to: "developers#update"
 
   get "/games", to: "games#index"
   get "/games/new", to: "games#new"
