@@ -58,4 +58,26 @@ RSpec.describe 'the developers index page' do
       expect(current_path).to eq("/developers/#{@developer2.id}/edit")
     end
   end
+
+  describe 'User Story 22' do
+    it 'has a delete button that returns you to the index page when you click it' do
+      visit "/developers/"
+
+      within "#developer_#{@developer1.id}_info" do
+        click_button('Delete')
+      end
+
+      expect(current_path).to eq('/developers')
+    end
+
+    it 'has a delete button next to each developer that deletes the developer' do
+      visit "/developers/"
+
+      within "#developer_#{@developer1.id}_info" do
+        click_button('Delete')
+      end
+
+      expect(page).to_not have_content('Nintendo')
+    end
+  end
 end
