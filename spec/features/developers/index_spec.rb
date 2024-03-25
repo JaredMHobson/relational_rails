@@ -44,16 +44,16 @@ RSpec.describe 'the developers index page' do
   end
 
   describe 'User Story 17' do
-    it 'has an edit link next to each developer that takes me to the developers edit page' do
+    it 'has an edit button next to each developer that takes me to the developers edit page' do
       visit "/developers"
 
-      click_link("Edit #{@developer1.name}")
+      click_button("Edit #{@developer1.name}")
 
       expect(current_path).to eq("/developers/#{@developer1.id}/edit")
 
       visit "/developers"
 
-      click_link("Edit #{@developer2.name}")
+      click_button("Edit #{@developer2.name}")
 
       expect(current_path).to eq("/developers/#{@developer2.id}/edit")
     end
