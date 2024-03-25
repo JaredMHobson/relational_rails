@@ -3,9 +3,11 @@
 <a href="/developers/new">Create new developer</a>
 
 <% @developers.each do |dev| %>
-  <h3><a href="/developers/<%= dev.id %>"><%= dev.name %></a></h3>
-  <%= link_to "Edit #{dev.name}", "/developers/#{dev.id}/edit" %>
-  <p>Founded: <%= dev.year_founded %></p>
-  <p>Indie Studio: <%= dev.is_indie %></p>
-  <p>Created: <%= dev.created_at %></p>
+  <div id="developer_<%= dev.id%>_info">
+    <h3><a href="/developers/<%= dev.id %>"><%= dev.name %></a></h3>
+    <%= button_to "Edit #{dev.name}", "/developers/#{dev.id}/edit" %> <%= button_to "Delete", "/developers/#{dev.id}", method: :delete %>
+    <p>Founded: <%= dev.year_founded %></p>
+    <p>Indie Studio: <%= dev.is_indie %></p>
+    <p>Created: <%= dev.created_at %></p>
+  </div>
 <% end %>
