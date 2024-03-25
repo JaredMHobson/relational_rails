@@ -52,6 +52,7 @@ RSpec.describe 'the games index page' do
       expect(page).to have_content("Developer: Riot Games")
     end
 
+    # Removed due to User Story 15 only showing games with multiplayer
     # within "#game_#{@control.id}_info" do
     #   expect(page).to have_content("Developer: Remedy Entertainment")
     # end
@@ -79,6 +80,28 @@ RSpec.describe 'the games index page' do
       click_link("Edit #{@league.name}")
 
       expect(current_path).to eq("/games/#{@league.id}/edit")
+    end
+  end
+
+  describe 'User Story 23' do
+    it 'has a delete button that returns you to the index page when you click it' do
+      visit "/games/"
+
+      within "#game_#{@valorant.id}_info" do
+        click_button('Delete')
+      end
+
+      expect(current_path).to eq('/games')
+    end
+
+    it 'has a delete button next to each developer that deletes the developer' do
+      visit "/games/"
+
+      within "#game_#{@valorant.id}_info" do
+        click_button('Delete')
+      end
+
+      expect(page).to_not have_content('Valorant')
     end
   end
 end
