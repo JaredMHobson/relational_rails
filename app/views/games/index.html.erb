@@ -1,11 +1,12 @@
 <h1>Game Index</h1>
 
 <% @games.each do |game| %>
-<div id="game_<%= game.id%>_info">
-  <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>
-  <%= link_to "Edit #{game.name}", "/games/#{game.id}/edit" %>
-  <p>Developer: <%= game.dev_name %></p>
-  <p>Released: <%= game.year_released %></p>
-  <p>Multiplayer: <%= game.has_multiplayer %></p>
-</div>
+  <div id="game_<%= game.id%>_info">
+    <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>
+    <%= button_to "Edit #{game.name}", "/games/#{game.id}/edit" %>
+    <%= button_to "Delete", "/games/#{game.id}", method: :delete %>
+    <p>Developer: <%= game.dev_name %></p>
+    <p>Released: <%= game.year_released %></p>
+    <p>Multiplayer: <%= game.has_multiplayer %></p>
+  </div>
 <% end %>
