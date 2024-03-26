@@ -10,4 +10,8 @@ class Developer < ApplicationRecord
       dev.game_count
     end.reverse
   end
+
+  def self.sort_by_created_at
+    order(created_at: :DESC)
+  end
 end
