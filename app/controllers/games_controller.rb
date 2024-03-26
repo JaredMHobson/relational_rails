@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all.where(has_multiplayer: true)
+    @games = Game.where(has_multiplayer: true)
   end
 
   def new

@@ -1,6 +1,6 @@
 class DevelopersController < ApplicationController
   def index
-    @developers = Developer.all.order(created_at: :DESC)
+    @developers = Developer.order(created_at: :DESC)
   end
 
   def new
