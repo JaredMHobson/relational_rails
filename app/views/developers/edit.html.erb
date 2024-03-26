@@ -1,3 +1,5 @@
+<h1>Update <%= @developer.name %> info </h1>
+
 <%= form_with url: "/developers/#{@developer.id}", method: :patch, local: true do |form| %>
   <%= form.label :name, 'Name:' %>
   <%= form.text_field :name, value: @developer.name %><br/>
