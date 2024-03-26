@@ -2,9 +2,9 @@
 
 <%= form_with url: '/games', method: :post, local: true, class: 'add_resource_form' do |form| %>
   <%= form.label :name, "Name:" %>
-  <%= form.text_field :name %><br/>
+  <%= form.text_field :name, required: true %><br/>
   <%= form.label :year_released, "Year Released:" %>
-  <%= form.text_field :year_released %><br/>
+  <%= form.number_field :year_released, required: true %><br/>
   <%= form.label :has_multiplayer, "Multiplayer:" %>
   <%= form.check_box :has_multiplayer, {}, "true", "false" %><br/>
   <%= form.label :developer_id, "Developer:"%>
