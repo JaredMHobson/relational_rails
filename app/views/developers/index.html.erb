@@ -1,6 +1,8 @@
 <h1>Developer Index</h1>
 
-<%= link_to 'Add new developer', '/developers/new' %>
+<%= link_to 'Add new developer', '/developers/new' %><br/>
+<%= link_to 'Sort by total games', '/developers?sort=total_games' %><br/>
+<%= link_to 'Sort by date created', '/developers?sort=created_at' %>
 
 <% @developers.each do |dev| %>
   <div id="developer_<%= dev.id%>_info", class="index_info">
@@ -10,5 +12,6 @@
     <p>Year Founded: <%= dev.year_founded %></p>
     <p>Indie Studio: <%= dev.is_indie %></p>
     <p>Created: <%= dev.created_at %></p>
+    <p>Total Games: <%= dev.game_count %></p>
   </div>
 <% end %>
