@@ -30,4 +30,16 @@ RSpec.describe Developer do
       expect(developer2.is_indie).to eq(false)
     end
   end
+
+  describe '#game_count' do
+    it 'can count the number of games it has made' do
+      developer1.games.create!({ name: 'Cool Game', year_released: 1999, has_multiplayer: true })
+
+      expect(developer1.game_count).to eq(1)
+
+      developer1.games.create!({ name: 'Another Game', year_released: 2020, has_multiplayer: false })
+
+      expect(developer1.game_count).to eq(2)
+    end
+  end
 end
