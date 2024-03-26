@@ -22,7 +22,7 @@ RSpec.describe 'the developers new page' do
       fill_in(:name, with: '2XKO')
       fill_in(:year_released, with: 2025)
       check(:has_multiplayer)
-      click_button('Create Game')
+      click_button('Add Game')
 
       new_game_name = Game.last.name
 
@@ -35,20 +35,20 @@ RSpec.describe 'the developers new page' do
       fill_in(:name, with: '2XKO')
       fill_in(:year_released, with: 2025)
       check(:has_multiplayer)
-      click_button('Create Game')
+      click_button('Add Game')
 
       new_game_dev = Game.last.dev_name
 
       expect(new_game_dev).to eq(@riot.name)
     end
 
-    it 'redirects me to the developers games page when I click the Create Game button' do
+    it 'redirects me to the developers games page when I click the Add Game button' do
       visit "/developers/#{@riot.id}/games/new"
 
       fill_in(:name, with: '2XKO')
       fill_in(:year_released, with: 2025)
       check(:has_multiplayer)
-      click_button('Create Game')
+      click_button('Add Game')
 
       expect(current_path).to eq("/developers/#{@riot.id}/games")
     end
@@ -59,7 +59,7 @@ RSpec.describe 'the developers new page' do
       fill_in(:name, with: '2XKO')
       fill_in(:year_released, with: 2025)
       check(:has_multiplayer)
-      click_button('Create Game')
+      click_button('Add Game')
 
       expect(page).to have_content('2XKO')
       expect(page).to have_content('Year Released: 2025')
