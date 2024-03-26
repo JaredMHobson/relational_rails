@@ -7,7 +7,9 @@ class DeveloperGamesController < ApplicationController
     when params[:games_after_year]
       @games = @developer.games.where("year_released >= #{params[:games_after_year]}")
     when params[:sort] == 'alphabetically'
-      @games = @developer.games.order(:name)
+      @games = @developer.games.sort_games_by_name
+    else
+      @games = @developer.games
     end
   end
 
