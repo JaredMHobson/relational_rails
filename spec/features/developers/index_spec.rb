@@ -80,4 +80,36 @@ RSpec.describe 'the developers index page' do
       expect(page).to_not have_content('Nintendo')
     end
   end
+
+  describe 'Extension 1' do
+    it 'has a link that sorts its developers by total games' do
+      @developer1.games.create!(name: "VALORANT", has_multiplayer: true, year_released: 2020)
+      @developer1.games.create!(name: "League of Legends", has_multiplayer: true, year_released: 2009)
+      @developer3.games.create!(name: "Random Game", has_multiplayer: true, year_released: 2009)
+
+      visit "/developers"
+
+      expect(@developer3.name).to appear_before(@developer1.name)
+
+      click_link 'Sort by total games'
+
+      expect(@developer1.name).to appear_before(@developer3.name)
+    end
+  end
+
+  describe 'Sort by date created link' do
+    it 'has a link that sorts its developers by date created' do
+      @developer1.games.create!(name: "VALORANT", has_multiplayer: true, year_released: 2020)
+
+      visit "/developers"
+      # Just to mix up the order
+      click_link 'Sort by total games'
+
+      expect(@developer1.name).to appear_before(@developer3.name)
+
+      click_link 'Sort by date created'
+
+      expect(@developer3.name).to appear_before(@developer1.name)
+    end
+  end
 end
