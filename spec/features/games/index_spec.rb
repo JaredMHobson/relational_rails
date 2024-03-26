@@ -70,16 +70,16 @@ RSpec.describe 'the games index page' do
   end
 
   describe 'User Story 18' do
-    it 'has an edit button next to each game that takes me to the games edit page' do
+    it 'has an update button next to each game that takes me to the games edit page' do
       visit "/games"
 
-      click_button("Edit #{@valorant.name}")
+      click_button("Update #{@valorant.name}")
 
       expect(current_path).to eq("/games/#{@valorant.id}/edit")
 
       visit "/games"
 
-      click_button("Edit #{@league.name}")
+      click_button("Update #{@league.name}")
 
       expect(current_path).to eq("/games/#{@league.id}/edit")
     end
