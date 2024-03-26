@@ -1,6 +1,6 @@
 <h1>Add a new game</h1>
 
-<%= form_with url: '/games', method: :post, local: true do |form| %>
+<%= form_with url: '/games', method: :post, local: true, class: 'add_resource_form' do |form| %>
   <%= form.label :name, "Name:" %>
   <%= form.text_field :name %><br/>
   <%= form.label :year_released, "Year Released:" %>

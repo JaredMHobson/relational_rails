@@ -62,3 +62,18 @@ nav li a {
   border: 2px solid hwb(0 40% 60%);
   border-radius: 5px;
 }
+
+.add_resource_form {
+  background-color: #bbb;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 2px solid hwb(0 40% 60%);
+  border-radius: 5px;
+}
+
+.add_resource_form label {
+  display: inline-block;
+  width: 120px;
+  padding-bottom: 5px;
+}
