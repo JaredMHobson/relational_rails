@@ -4,7 +4,7 @@ class DevelopersController < ApplicationController
 
     if params[:sort] == 'total_games'
       @developers = Developer.sort_by_total_games
-    elsif params[:sort] == 'total_games'
+    elsif params[:sort] == 'created_at'
       @developers = Developer.sort_by_created_at
     end
   end
