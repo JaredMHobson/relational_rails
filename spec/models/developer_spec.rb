@@ -42,4 +42,19 @@ RSpec.describe Developer do
       expect(developer1.game_count).to eq(2)
     end
   end
+
+  describe '::sort_by_total_games' do
+    it 'can sort the developers by total games' do
+      developer1.games.create!({ name: 'Cool Game', year_released: 1999, has_multiplayer: true })
+      developer1.games.create!({ name: 'Cool Game 2', year_released: 2005, has_multiplayer: false })
+      developer2.games.create!({ name: 'Another Game', year_released: 2020, has_multiplayer: false })
+
+      expect(Developer.sort_by_total_games).to eq([developer1, developer2])
+
+      developer2.games.create!({ name: 'Another Game 2', year_released: 2021, has_multiplayer: false })
+      developer2.games.create!({ name: 'Another Game 3', year_released: 2022, has_multiplayer: false })
+
+      expect(Developer.sort_by_total_games).to eq([developer2, developer1])
+    end
+  end
 end
