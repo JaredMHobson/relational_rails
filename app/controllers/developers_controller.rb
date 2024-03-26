@@ -1,6 +1,12 @@
 class DevelopersController < ApplicationController
   def index
-    @developers = Developer.order(created_at: :DESC)
+    @developers = Developer.sort_by_created_at
+
+    if params[:sort] == 'total_games'
+      @developers = Developer.sort_by_total_games
+    elsif params[:sort] == 'total_games'
+      @developers = Developer.sort_by_created_at
+    end
   end
 
   def new
