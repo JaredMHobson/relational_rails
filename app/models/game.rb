@@ -12,4 +12,8 @@ class Game < ApplicationRecord
   def self.show_games_released_after(year)
     where("year_released >= #{year}")
   end
+
+  def self.show_multiplayer_games
+    where(has_multiplayer: true)
+  end
 end
