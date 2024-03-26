@@ -2,9 +2,9 @@
 
 <%= form_with url: "/games/#{@game.id}", method: :patch, local: true, class: 'add_resource_form' do |form| %>
   <%= form.label :name, 'Name:' %>
-  <%= form.text_field :name, value: @game.name %><br/>
+  <%= form.text_field :name, value: @game.name, required: true %><br/>
   <%= form.label :year_released, 'Year Released:' %>
-  <%= form.number_field :year_released, value: @game.year_released %><br/>
+  <%= form.number_field :year_released, value: @game.year_released, required: true %><br/>
   <%= form.label :has_multiplayer, 'Multiplayer:' %>
   <%= form.check_box :has_multiplayer, checked: @game.has_multiplayer %><br/>
   <%= form.label :developer_id, 'Developer:' %>

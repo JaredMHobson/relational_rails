@@ -2,9 +2,9 @@
 
 <%= form_with url: "/developers/#{@developer.id}", method: :patch, local: true, class: 'add_resource_form' do |form| %>
   <%= form.label :name, 'Name:' %>
-  <%= form.text_field :name, value: @developer.name %><br/>
+  <%= form.text_field :name, value: @developer.name, required: true %><br/>
   <%= form.label :year_founded, 'Year Founded:' %>
-  <%= form.number_field :year_founded, value: @developer.year_founded %><br/>
+  <%= form.number_field :year_founded, value: @developer.year_founded, required: true %><br/>
   <%= form.label :is_indie, "Indie Studio:" %>
   <%= form.check_box :is_indie, checked: @developer.is_indie %>
   <%= form.submit "Update #{@developer.name}" %>
