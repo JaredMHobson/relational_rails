@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Developer do
-  let (:developer1) { Developer.new({ id: 1, name: 'Cool Dev', year_founded: 1992, is_indie: true}) }
-  let (:developer2) { Developer.new({ id: 2, name: 'Another Dev', year_founded: 2000, is_indie: false}) }
+  let (:developer1) { Developer.create!({ id: 1, name: 'Cool Dev', year_founded: 1992, is_indie: true}) }
+  let (:developer2) { Developer.create!({ id: 2, name: 'Another Dev', year_founded: 2000, is_indie: false}) }
+
+  describe 'associations' do
+    it { should have_many :games }
+  end
 
   describe '#initialize' do
     it 'exists' do
