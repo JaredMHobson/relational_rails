@@ -53,3 +53,12 @@ nav li a {
   padding: 5px 10px;
   text-decoration: none;
 }
+
+.index_info {
+  background-color: #bbb;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 2px solid hwb(0 40% 60%);
+  border-radius: 5px;
+}
