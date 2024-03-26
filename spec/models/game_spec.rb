@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Game do
-  let (:game1) { Game.new({ id: 1, name: 'Cool Game', year_released: 1999, has_multiplayer: true, developer_id: 1 }) }
-  let (:game2) { Game.new({ id: 2, name: 'Another Game', year_released: 2020, has_multiplayer: false, developer_id: 1 }) }
+  let (:developer1) { Developer.create!({ name: 'Cool Dev', year_founded: 1992, is_indie: true}) }
+  let (:developer2) { Developer.create!({ name: 'Another Dev', year_founded: 2000, is_indie: false}) }
+  let (:game1) { developer1.games.create!({ name: 'Cool Game', year_released: 1999, has_multiplayer: true }) }
+  let (:game2) { developer2.games.create!({ name: 'Another Game', year_released: 2020, has_multiplayer: false }) }
 
   describe '#initialize' do
     it 'exists' do
@@ -10,7 +12,7 @@ RSpec.describe Game do
     end
 
     it 'has an id' do
-      expect(game1.id).to eq(1)
+      expect(game1.id).to_not eq(nil)
     end
 
     it 'has a name' do
@@ -27,7 +29,15 @@ RSpec.describe Game do
     end
 
     it 'has a developer id' do
-      expect(game1.developer_id).to eq(1)
+      expect(game1.developer_id).to eq(developer1.id)
+    end
+  end
+
+  describe '#dev_name' do
+    it 'can return its developers name' do
+      game_developer = game1.dev_name
+
+      expect(game_developer).to eq('Cool Dev')
     end
   end
 end
