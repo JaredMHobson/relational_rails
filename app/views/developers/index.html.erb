@@ -3,9 +3,9 @@
 <%= link_to 'Add new developer', '/developers/new' %>
 
 <% @developers.each do |dev| %>
-  <div id="developer_<%= dev.id%>_info">
+  <div id="developer_<%= dev.id%>_info", class="index_info">
     <h3><%= link_to "#{dev.name}", "/developers/#{dev.id}" %></h3>
-    <%= button_to "Edit #{dev.name}", "/developers/#{dev.id}/edit" %> 
+    <%= button_to "Update #{dev.name}", "/developers/#{dev.id}/edit", method: :get %> 
     <%= button_to "Delete", "/developers/#{dev.id}", method: :delete %>
     <p>Year Founded: <%= dev.year_founded %></p>
     <p>Indie Studio: <%= dev.is_indie %></p>
