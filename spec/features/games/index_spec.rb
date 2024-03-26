@@ -28,6 +28,7 @@ RSpec.describe 'the games index page' do
       expect(page).to have_content("Multiplayer: true")
     end
 
+    # removed due to conflict with user story 15
     # within "#game_#{@control.id}_info" do
     #   expect(page).to have_content("Multiplayer: false")
     # end
@@ -40,6 +41,7 @@ RSpec.describe 'the games index page' do
       expect(page).to have_content("Released: 2020")
     end
 
+    # removed due to conflict with user story 15
     # within "#game_#{@control.id}_info" do
     #   expect(page).to have_content("Released: 2019")
     # end
@@ -52,7 +54,7 @@ RSpec.describe 'the games index page' do
       expect(page).to have_content("Developer: Riot Games")
     end
 
-    # Removed due to User Story 15 only showing games with multiplayer
+    # removed due to conflict with user story 15
     # within "#game_#{@control.id}_info" do
     #   expect(page).to have_content("Developer: Remedy Entertainment")
     # end
