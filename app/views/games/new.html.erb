@@ -1,4 +1,4 @@
-<h1>This page is for creating new games</h1>
+<h1>Add a new game</h1>
 
 <%= form_with url: '/games', method: :post, local: true do |form| %>
   <%= form.label :name, "Name:" %>
@@ -8,6 +8,6 @@
   <%= form.label :has_multiplayer, "Multiplayer:" %>
   <%= form.check_box :has_multiplayer, {}, "true", "false" %><br/>
   <%= form.label :developer_id, "Developer:"%>
-  <%= form.collection_select( :developer_id, @developers, :id, :name) %>
-  <%= form.submit "Create Game"%>
+  <%= form.collection_select( :developer_id, @developers, :id, :name) %><br/>
+  <%= form.submit "Add Game"%>
 <% end %>

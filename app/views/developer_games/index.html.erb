@@ -10,7 +10,9 @@
 <% end %>
 
 <% @games.each do |game| %>
-  <h3><%= link_to "#{game.name}", "/games/#{game.id}" %></h3>
-  <p>Year Released: <%= game.year_released %></p>
-  <p>Multiplayer: <%= game.has_multiplayer %></p>
+  <div id="game_<%= game.id%>_info" class="index_info">
+    <h3><%= link_to "#{game.name}", "/games/#{game.id}" %></h3>
+    <p>Year Released: <%= game.year_released %></p>
+    <p>Multiplayer: <%= game.has_multiplayer %></p>
+  </div>
 <% end %>

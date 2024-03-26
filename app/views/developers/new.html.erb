@@ -1,4 +1,4 @@
-<h1>Create a new developer</h1>
+<h1>Add a new developer</h1>
 
 <%= form_with url: '/developers', method: :post, local: true do |form| %>
   <%= form.label :name, 'Name:' %>
@@ -7,5 +7,5 @@
   <%= form.number_field :year_founded %><br/>
   <%= form.label :is_indie, 'Indie Studio:' %>
   <%= form.check_box :is_indie %><br/>
-  <%= form.submit 'Create Developer' %>
+  <%= form.submit 'Add Developer' %>
 <% end %>

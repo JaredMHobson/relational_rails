@@ -1,11 +1,11 @@
-<div class="index_info">
 <h1><%= @developer.name %></h1>
 
-<%= button_to "Update #{@developer.name}", "/developers/#{@developer.id}/edit", method: :get %> 
-<%= button_to "Delete", "/developers/#{@developer.id}", method: :delete %>
+<div class="index_info">
+  <%= button_to "Update #{@developer.name}", "/developers/#{@developer.id}/edit", method: :get %> 
+  <%= button_to "Delete", "/developers/#{@developer.id}", method: :delete %>
 
-<p>Year Founded: <%= @developer.year_founded %></p>
-<p>Indie: <%= @developer.is_indie %></p>
-<p>Total Games: <%= @developer.game_count %></p>
-<p><%= link_to "List of #{@developer.name} games", "/developers/#{@developer.id}/games" %></p>
+  <p>Year Founded: <%= @developer.year_founded %></p>
+  <p>Indie: <%= @developer.is_indie %></p>
+  <p>Total Games: <%= @developer.game_count %></p>
+  <p><%= link_to "List of #{@developer.name} games", "/developers/#{@developer.id}/games" %></p>
 </div>
