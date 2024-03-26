@@ -9,55 +9,57 @@ RSpec.describe 'the games index page' do
     @control = @remedy.games.create!(name: "Control", has_multiplayer: false, year_released: 2019)
   end
 
-  it 'displays all games names' do
-    visit "/games"
+  describe 'User Story 3' do
+    it 'displays all games names' do
+      visit "/games"
 
-    within "#game_#{@valorant.id}_info" do
-      expect(page).to have_content(@valorant.name)
+      within "#game_#{@valorant.id}_info" do
+        expect(page).to have_content(@valorant.name)
+      end
+
+      within "#game_#{@league.id}_info" do
+        expect(page).to have_content(@league.name)
+      end
     end
 
-    within "#game_#{@league.id}_info" do
-      expect(page).to have_content(@league.name)
-    end
-  end
+    it 'displays if each game has multiplayer' do
+      visit "/games"
 
-  it 'displays if each game has multiplayer' do
-    visit "/games"
+      within "#game_#{@valorant.id}_info" do
+        expect(page).to have_content("Multiplayer: true")
+      end
 
-    within "#game_#{@valorant.id}_info" do
-      expect(page).to have_content("Multiplayer: true")
-    end
-
-    # removed due to conflict with user story 15
-    # within "#game_#{@control.id}_info" do
-    #   expect(page).to have_content("Multiplayer: false")
-    # end
-  end
-
-  it 'displays the year each game was released' do
-    visit "/games"
-
-    within "#game_#{@valorant.id}_info" do
-      expect(page).to have_content("Released: 2020")
+      # removed due to conflict with user story 15
+      # within "#game_#{@control.id}_info" do
+      #   expect(page).to have_content("Multiplayer: false")
+      # end
     end
 
-    # removed due to conflict with user story 15
-    # within "#game_#{@control.id}_info" do
-    #   expect(page).to have_content("Released: 2019")
-    # end
-  end
+    it 'displays the year each game was released' do
+      visit "/games"
 
-  it 'display the developers name of each game' do
-    visit "/games"
+      within "#game_#{@valorant.id}_info" do
+        expect(page).to have_content("Released: 2020")
+      end
 
-    within "#game_#{@valorant.id}_info" do
-      expect(page).to have_content("Developer: Riot Games")
+      # removed due to conflict with user story 15
+      # within "#game_#{@control.id}_info" do
+      #   expect(page).to have_content("Released: 2019")
+      # end
     end
 
-    # removed due to conflict with user story 15
-    # within "#game_#{@control.id}_info" do
-    #   expect(page).to have_content("Developer: Remedy Entertainment")
-    # end
+    it 'display the developers name of each game' do
+      visit "/games"
+
+      within "#game_#{@valorant.id}_info" do
+        expect(page).to have_content("Developer: Riot Games")
+      end
+
+      # removed due to conflict with user story 15
+      # within "#game_#{@control.id}_info" do
+      #   expect(page).to have_content("Developer: Remedy Entertainment")
+      # end
+    end
   end
 
   describe 'User Story 15' do
@@ -96,7 +98,7 @@ RSpec.describe 'the games index page' do
       expect(current_path).to eq('/games')
     end
 
-    it 'has a delete button next to each developer that deletes the developer' do
+    it 'has a delete button next to each game that deletes the game' do
       visit "/games/"
 
       within "#game_#{@valorant.id}_info" do
