@@ -66,4 +66,14 @@ RSpec.describe Game do
       expect(modern_games).to eq([@game2, @game3])
     end
   end
+
+  describe '::show_multiplayer_games' do
+    it 'will only show games that have multiplayer' do
+      @game3 = @developer2.games.create!({ name: 'The Third Game', year_released: 2021, has_multiplayer: true })
+
+      multiplayer_games = Game.show_multiplayer_games
+
+      expect(multiplayer_games).to eq([@game1, @game3])
+    end
+  end
 end
