@@ -106,4 +106,20 @@ RSpec.describe 'the games index page' do
       expect(page).to_not have_content('Valorant')
     end
   end
+
+  describe 'Add Game Button' do
+    it 'has a link to create a new game record' do
+      visit '/games'
+
+      expect(page).to have_link('Add new game')
+    end
+
+    it 'takes you to page games/new when you click on the link' do
+      visit '/games'
+
+      click_link('Add new game')
+
+      expect(page).to have_current_path('/games/new')
+    end
+  end
 end
