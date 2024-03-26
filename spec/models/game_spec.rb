@@ -44,4 +44,14 @@ RSpec.describe Game do
       expect(game_developer).to eq('Cool Dev')
     end
   end
+
+  describe '::sort_games_by_name' do
+    it 'will sort all alphabetically by name' do
+      game3 = developer2.games.create!({ name: 'The Third Game', year_released: 2021, has_multiplayer: true })
+
+      abc_games = Game.sort_games_by_name
+
+      expect(abc_games).to eq([game2, game1, game3])
+    end
+  end
 end
