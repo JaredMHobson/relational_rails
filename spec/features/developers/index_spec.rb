@@ -95,6 +95,22 @@ RSpec.describe 'the developers index page' do
 
       expect(@developer1.name).to appear_before(@developer3.name)
     end
+
+    it 'has a count of each devs total games next to it' do
+      @developer1.games.create!(name: "VALORANT", has_multiplayer: true, year_released: 2020)
+      @developer1.games.create!(name: "League of Legends", has_multiplayer: true, year_released: 2009)
+      @developer3.games.create!(name: "Random Game", has_multiplayer: true, year_released: 2009)
+
+      visit '/developers'
+
+      within "#developer_#{@developer1.id}_info" do
+        expect(page).to have_content("Total Games: 2")
+      end
+
+      within "#developer_#{@developer3.id}_info" do
+        expect(page).to have_content("Total Games: 1")
+      end
+    end
   end
 
   describe 'Sort by date created link' do
