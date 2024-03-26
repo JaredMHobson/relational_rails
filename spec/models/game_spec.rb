@@ -6,6 +6,10 @@ RSpec.describe Game do
   let (:game1) { developer1.games.create!({ name: 'Cool Game', year_released: 1999, has_multiplayer: true }) }
   let (:game2) { developer2.games.create!({ name: 'Another Game', year_released: 2020, has_multiplayer: false }) }
 
+  describe 'associations' do
+    it {should belong_to :developer}
+  end
+
   describe '#initialize' do
     it 'exists' do
       expect(game1).to be_a(Game)
