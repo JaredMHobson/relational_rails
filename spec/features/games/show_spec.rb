@@ -62,13 +62,13 @@ RSpec.describe 'the games show page' do
     it 'has a link to the edit page when I visit a games show page' do
       visit "/games/#{@control.id}"
 
-      expect(page).to have_link("Update #{@control.name}")
+      expect(page).to have_button("Update #{@control.name}")
     end
 
-    it 'takes me to the game edit page when I click the update link' do
+    it 'takes me to the game edit page when I click the update button' do
       visit "/games/#{@control.id}"
 
-      click_link("Update #{@control.name}")
+      click_button("Update #{@control.name}")
 
       expect(current_path).to eq("/games/#{@control.id}/edit")
     end

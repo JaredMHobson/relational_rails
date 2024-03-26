@@ -1,8 +1,10 @@
 <h1><%= @game.name %></h1>
 
-<%= link_to "Update #{@game.name}", "/games/#{@game.id}/edit" %>
-<%= button_to 'Delete', "/games/#{@game.id}", method: :delete %>
+<div class="index_info">
+  <%= button_to "Update #{@game.name}", "/games/#{@game.id}/edit", method: :get %>
+  <%= button_to 'Delete', "/games/#{@game.id}", method: :delete %>
 
-<p>Developer: <a href="/developers/<%= @game.developer_id %>"><%= @game.dev_name %></a></p>
-<p>Year Released: <%= @game.year_released %></p>
-<p>Multiplayer: <%= @game.has_multiplayer %></p>
+  <p>Developer: <%= link_to @game.dev_name, "/developers/#{@game.developer_id}" %></p>
+  <p>Year Released: <%= @game.year_released %></p>
+  <p>Multiplayer: <%= @game.has_multiplayer %></p>
+</div>

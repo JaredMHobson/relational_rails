@@ -1,18 +1,20 @@
 <h1><%= @developer.name %> Games</h1>
 
-<%= link_to 'Add Game', "/developers/#{@developer.id}/games/new" %>
-
+<%= link_to 'Add Game', "/developers/#{@developer.id}/games/new" %><br/>
 <%= link_to 'Sort Alphabetically',"/developers/#{@developer.id}/games?sort=alphabetically" %><br/>
 
 <%= form_with url: "/developers/#{@developer.id}/games", method: :get do |form| %>
-  <%= form.label :games_after_year, 'Only Show Games Released After Year:' %>
-  <%= form.number_field :games_after_year %>
+  <%= form.label :games_after_year, 'Only Show Games Released After Year:' %><br/>
+  <%= form.number_field :games_after_year, value: '0000' %>
   <%= form.submit 'Submit' %>
 <% end %>
 
-
 <% @games.each do |game| %>
-  <h3><a href="/games/<%= game.id %>"><%= game.name %></a></h3>
-  <p>Year Released: <%= game.year_released %></p>
-  <p>Multiplayer: <%= game.has_multiplayer %></p>
+  <div id="game_<%= game.id%>_info" class="index_info">
+    <h3><%= link_to "#{game.name}", "/games/#{game.id}" %></h3>
+    <%= button_to "Update #{game.name}", "/games/#{game.id}/edit", method: :get %>
+    <%= button_to "Delete", "/games/#{game.id}", method: :delete %>
+    <p>Year Released: <%= game.year_released %></p>
+    <p>Multiplayer: <%= game.has_multiplayer %></p>
+  </div>
 <% end %>

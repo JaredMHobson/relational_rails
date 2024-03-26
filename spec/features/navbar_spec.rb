@@ -16,8 +16,12 @@ RSpec.describe 'the navbar' do
       visit '/'
 
       within 'nav' do
-        expect(page).to have_link(href: '/games')
+        expect(page).to have_link('Game Index')
+
+        click_link('Game Index')
       end
+
+      expect(page).to have_current_path('/games')
     end
   end
 
@@ -26,8 +30,12 @@ RSpec.describe 'the navbar' do
       visit '/'
 
       within 'nav' do
-        expect(page).to have_link(href: '/developers')
+        expect(page).to have_link('Developer Index')
+
+        click_link('Developer Index')
       end
+
+      expect(page).to have_current_path('/developers')
     end
   end
 end

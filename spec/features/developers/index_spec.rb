@@ -29,31 +29,31 @@ RSpec.describe 'the developers index page' do
 
   describe 'User Story 11' do
     it 'has a link to create a new developer record' do
-      visit "/developers"
+      visit '/developers'
 
-      expect(page).to have_link(href: "/developers/new")
+      expect(page).to have_link('Add new developer')
     end
 
     it 'takes you to page developers/new when you click on the link' do
-      visit "/developers"
+      visit '/developers'
 
-      click_link(href: "/developers/new")
+      click_link('Add new developer')
 
-      expect(page).to have_current_path("/developers/new")
+      expect(page).to have_current_path('/developers/new')
     end
   end
 
   describe 'User Story 17' do
-    it 'has an edit button next to each developer that takes me to the developers edit page' do
+    it 'has an update button next to each developer that takes me to the developers edit page' do
       visit "/developers"
 
-      click_button("Edit #{@developer1.name}")
+      click_button("Update #{@developer1.name}")
 
       expect(current_path).to eq("/developers/#{@developer1.id}/edit")
 
       visit "/developers"
 
-      click_button("Edit #{@developer2.name}")
+      click_button("Update #{@developer2.name}")
 
       expect(current_path).to eq("/developers/#{@developer2.id}/edit")
     end

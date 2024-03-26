@@ -1,4 +1,6 @@
-<%= form_with url: "/games/#{@game.id}", method: :patch, local: true do |form| %>
+<h1>Update <%= @game.name %></h1>
+
+<%= form_with url: "/games/#{@game.id}", method: :patch, local: true, class: 'add_resource_form' do |form| %>
   <%= form.label :name, 'Name:' %>
   <%= form.text_field :name, value: @game.name %><br/>
   <%= form.label :year_released, 'Year Released:' %>

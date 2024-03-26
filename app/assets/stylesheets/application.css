@@ -13,8 +13,21 @@
  *= require_tree .
  *= require_self
  */
+ html {
+  background-color: #052F5F;
+ }
+
+ body {
+  max-width: 80%;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 0px auto;
+  padding: 3%;
+  max-height: 100%;
+ }
 
 nav {
+  padding-top: 3%;
   width: fit-content;
 }
 
@@ -39,4 +52,28 @@ nav li a {
   text-align: center;
   padding: 5px 10px;
   text-decoration: none;
+}
+
+.index_info {
+  background-color: #bbb;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 2px solid hwb(0 40% 60%);
+  border-radius: 5px;
+}
+
+.add_resource_form {
+  background-color: #bbb;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 2px solid hwb(0 40% 60%);
+  border-radius: 5px;
+}
+
+.add_resource_form label {
+  display: inline-block;
+  width: 120px;
+  padding-bottom: 5px;
 }

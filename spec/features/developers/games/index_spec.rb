@@ -89,4 +89,42 @@ RSpec.describe 'the developers games page' do
       expect(page).to_not have_content('League of Legends')
     end
   end
+
+  describe 'Update Button' do
+    it 'has an update button next to each game that takes me to the games edit page' do
+      visit "/developers/#{@riot.id}/games"
+
+      click_button("Update #{@valorant.name}")
+
+      expect(current_path).to eq("/games/#{@valorant.id}/edit")
+
+      visit "/developers/#{@riot.id}/games"
+
+      click_button("Update #{@league.name}")
+
+      expect(current_path).to eq("/games/#{@league.id}/edit")
+    end
+  end
+
+  describe 'Delete Button' do
+    it 'has a delete button that returns you to the games index page when you click it' do
+      visit "/developers/#{@riot.id}/games"
+
+      within "#game_#{@valorant.id}_info" do
+        click_button('Delete')
+      end
+
+      expect(current_path).to eq('/games')
+    end
+
+    it 'has a delete button next to each game that deletes the game' do
+      visit "/developers/#{@riot.id}/games"
+
+      within "#game_#{@valorant.id}_info" do
+        click_button('Delete')
+      end
+
+      expect(page).to_not have_content('Valorant')
+    end
+  end
 end
