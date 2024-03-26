@@ -13,8 +13,21 @@
  *= require_tree .
  *= require_self
  */
+ html {
+  background-color: #052F5F;
+ }
+
+ body {
+  max-width: 80%;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 0px auto;
+  padding: 3%;
+  max-height: 100%;
+ }
 
 nav {
+  padding-top: 3%;
   width: fit-content;
 }
 
