@@ -58,7 +58,7 @@ RSpec.describe 'the developers show page' do
     it 'displays a link to a list of its own games at /developers/:id/games' do
       visit "/developers/#{@developer1.id}"
 
-      expect(page).to have_link(href: "/developers/#{@developer1.id}/games")
+      expect(page).to have_link("List of #{@developer1.name} games")
     end
   end
 
