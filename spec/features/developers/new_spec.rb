@@ -20,29 +20,29 @@ RSpec.describe 'the developers new page' do
       fill_in(:name, with: 'ArenaNet')
       fill_in(:year_founded, with: 2001)
       check(:is_indie)
-      click_button('Create Developer')
+      click_button('Add Developer')
 
       new_developer_name = Developer.last.name
 
       expect(new_developer_name).to eq('ArenaNet')
     end
 
-    it 'redirects me to Developers index when I click the create developers button' do
+    it 'redirects me to Developers index when I click the add developer button' do
       visit '/developers/new'
 
       fill_in(:name, with: 'Psyonix')
       fill_in(:year_founded, with: 2000)
-      click_button('Create Developer')
+      click_button('Add Developer')
 
       expect(current_path).to eq('/developers')
     end
 
-    it 'shows the new developer on the index page when created' do
+    it 'shows the new developer on the index page when added' do
       visit '/developers/new'
 
       fill_in(:name, with: 'Jagex')
       fill_in(:year_founded, with: 1990)
-      click_button('Create Developer')
+      click_button('Add Developer')
 
       expect(page).to have_content('Jagex')
     end
